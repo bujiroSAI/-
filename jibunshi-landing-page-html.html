@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あなたの人生が、150ページの本になる。- 丁寧なインタビューで紡ぐ、あなたの人生史</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  <style>
+    /* ベースのスタイル */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #081219;
+      background-color: #F8F8F8;
+    }
+    
+    /* ヘッダーのスタイル */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      flex-shrink: 0;
+    }
+    
+    .logo img {
+      height: 40px;
+    }
+    
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    .main-nav ul li {
+      margin-left: 30px;
+    }
+    
+    .main-nav ul li a {
+      font-size: 17px;
+      font-weight: 500;
+      color: #081219;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .main-nav ul li a:hover {
+      color: #1623FE;
+    }
+    
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      color: #081219;
+    }
+    
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    a {
+      color: #1623FE;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    
+    a:hover {
+      opacity: 0.8;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: #1623FE;
+      color: white;
+      padding: 18px 35px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      margin: 10px;
+      min-width: 220px;
+      transition: all 0.3s;
+    }
+    
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    
+    section {
+      padding: 150px 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    
+    /* 1. ヒーローセクション */
+    .hero {
+      background-color: #F8F8F8;
+      color: #081219;
+      padding: 250px 0 150px;
+      position: relative;
+    }
+    
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .hero-content {
+      flex: 1;
+      text-align: left;
+      padding-right: 40px;
+    }
+    
+    .hero-image {
+      flex: 1;
+      text-align: right;
+    }
+    
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 25px;
+    }
+    
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 50px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    /* 2. サービス概要 */
+    .intro {
+      background-color: #1623FE;
+      color: white;
+    }
+    
+    .intro h2 {
+      color: white;
+    }
+    
+    .intro p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: white;
+    }
+    
+    .intro .highlight {
+      font-weight: 700;
+    }
+    
+    /* 3. 特徴・こだわり */
+    .features {
+      background-color: white;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 40px;
+    }
+    
+    .feature-card {
+      background-color: #1623FE;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      color: white;
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    /* 4. 制作の流れ */
+    .process-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      position: relative;
+    }
+    
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #E0E0E0;
+      z-index: 1;
+    }
+    
+    .step {
+      text-align: center;
+      width: 18%;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .step-number {
+      background-color: #1623FE;
+      color: white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+    
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    
+    .step p {
+      font-size: 18px;
+    }
+    
+    /* 5. 料金とサービス内容 */
+    .pricing {
+      background-color: white;
+    }
+    
+    .pricing-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #1623FE;
+      color: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .price-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .price {
+      font-size: 56px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 15px;
+    }
+    
+    .price-tax {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .price-details h3 {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 12px;
+      margin: 35px 0 20px;
+      color: white;
+      font-size: 22px;
+    }
+    
+    .price-details ul {
+      list-style-type: none;
+      margin-left: 20px;
+    }
+    
+    .price-details li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      color: white;
+      font-size: 18px;
+    }
+    
+    .price-details li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+    }
+    
+    /* 6. よくあるご質問 */
+    .faq-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    
+    .faq-question {
+      background-color: white;
+      padding: 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: #081219;
+    }
+    
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 25px;
+      font-size: 24px;
+      transition: transform 0.3s;
+    }
+    
+    .faq-item.active .faq-question::after {
+      content: '-';
+    }
+    
+    .faq-answer {
+      background-color: #F8F8F8;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+      border-radius: 0 0 5px 5px;
+      font-size: 18px;
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 25px;
+      max-height: 500px;
+    }
+    
+    /* 7. お問い合わせ・資料請求 */
+    .cta {
+      background-color: #F2F2F2;
+      text-align: center;
+    }
+    
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      color: #081219;
+    }
+    
+    .cta .hero-buttons {
+      justify-content: center;
+    }
+    
+    /* フッター */
+    footer {
+      background-color: #1623FE;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 30px;
+      padding: 0 15px;
+      text-align: left;
+    }
+    
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column ul li a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column ul li a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 30px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* レスポンシブデザイン */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+      
+      section {
+        padding: 100px 0;
+      }
+      
+      h2 {
+        font-size: 32px;
+        margin-bottom: 60px;
+      }
+      
+      .container {
+        padding: 0 25px;
+      }
+      
+      p {
+        margin-bottom: 25px;
+      }
+      
+      .header {
+        padding: 15px 0;
+      }
+      
+      .header-inner {
+        flex-wrap: wrap;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        margin-top: 20px;
+      }
+      
+      .main-nav.active {
+        display: block;
+      }
+      
+      .main-nav ul {
+        flex-direction: column;
+      }
+      
+      .main-nav ul li {
+        margin: 15px 0;
+        text-align: center;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .hero {
+        padding: 180px 0 100px;
+      }
+      
+      .hero-container {
+        flex-direction: column-reverse;
+      }
+      
+      .hero-content {
+        text-align: center;
+        padding-right: 0;
+        margin-top: 40px;
+      }
+      
+      .hero-image {
+        margin-bottom: 30px;
+      }
+      
+      .hero h1 {
+        font-size: 36px;
+        margin-bottom: 25px;
+      }
+      
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 40px;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+      
+      .btn {
+        margin: 10px 0;
+      }
+      
+      .intro p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+        margin-bottom: 30px;
+      }
+      
+      .feature-card {
+        padding: 35px 25px;
+      }
+      
+      .process-steps {
+        flex-direction: column;
+        margin-top: 50px;
+      }
+      
+      .process-steps::before {
+        display: none;
+      }
+      
+      .step {
+        width: 100%;
+        margin-bottom: 50px;
+        display: flex;
+        text-align: left;
+      }
+      
+      .step-number {
+        margin: 0 20px 0 0;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      
+      .step-content {
+        flex: 1;
+      }
+      
+      .step h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      
+      .pricing-container {
+        padding: 40px 25px;
+      }
+      
+      .price-details h3 {
+        margin: 40px 0 20px;
+      }
+      
+      .price-details li {
+        margin-bottom: 20px;
+      }
+      
+      .faq-container {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        margin-top: 50px;
+      }
+      
+      .faq-item {
+        margin-bottom: 30px;
+      }
+      
+      .faq-question {
+        padding: 20px;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 25px 20px;
+      }
+      
+      .cta p {
+        margin-bottom: 40px;
+      }
+      
+      .btn {
+        width: 90%;
+        max-width: 300px;
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+      }
+      
+      .footer-column {
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      
+      .footer-column:last-child {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダーメニュー -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <a href="#"><img src="/api/placeholder/150/50" alt="Logo"></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#intro">サービス概要</a></li>
+            <li><a href="#features">サービスの特徴</a></li>
+            <li><a href="#process">制作の流れ</a></li>
+            <li><a href="#pricing">料金</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle">
+          <i data-feather="menu"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. ヒーローセクション -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1>あなたの人生が、150ページの本になる。</h1>
+        <p>― 丁寧なインタビューで紡ぐ、あなたの人生史 ―</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn">お問い合わせフォーム</a>
+          <a href="tel:0300000000" class="btn">お電話でのお問い合わせ</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGNpcmNsZSBjeD0iMjUwIiBjeT0iMjAwIiByPSIxODAiIGZpbGw9IiMxNjIzRkUiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTAsIDYwKSByb3RhdGUoMTUpIj4KICAgIDxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMjUwIiBmaWxsPSIjRkZGOEY1IiBzdHJva2U9IiNFN0UzREUiIHN0cm9rZS13aWR0aD0iNCIvPgogICAgPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjE3MiIgaGVpZ2h0PSIyNDIiIGZpbGw9IiNGRkZFRkEiLz4KICAgIDxsaW5lIHgxPSIxMCIgeTE9IjEwIiB4Mj0iMTcwIiB5Mj0iMTAiIHN0cm9rZT0iI0U3RTNERSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8bGluZSB4MT0iMTAiIHkxPSIyMCIgeDI9IjE3MCIgeTI9IjIwIiBzdHJva2U9IiNFN0UzREUiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPGxpbmUgeDE9IjEwIiB5MT0iMzAiIHgyPSIxNzAiIHkyPSIzMCIgc3Ryb2tlPSIjRTdFM0RFIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgICA8IS0tIE9yYW5nZSBGbG93ZXIgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MCwgMTIwKSI+CiAgICAgIDxwYXRoIGQ9Ik0wLDQwIEMwLDQwIDAsLTEwIDAsLTEwIEM1LC0yNSAxNSwtMzAgMjAsLTIwIEMyNSwtMzAgMzUsLTI1IDQwLC0xMCBDNDAsLTEwIDQwLDQwIDQwLDQwIEM0MCw0MCAwLDQwIDAsMzUiIGZpbGw9IiNFOUExNUQiLz4KICAgICAgPGNpcmNsZSBjeD0iMjAiIGN5PSItMTAiIHI9IjciIGZpbGw9IiNGRkZFRkEiLz4KICAgIDwvZz4KCiAgICA8IS0tIEdyZWVuIFN0ZW0gYW5kIExlYXZlcyAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkwLCAxNDApIj4KICAgICAgPHBhdGggZD0iTTIwLDAgQzIwLDAgMjAsNzAgMjAsNzAiIHN0cm9rZT0iIzJDNzQ3MCIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgICAgIDxwYXRoIGQ9Ik0yMCw0MCBDMjAsNDAgNDAsNTAgNDUsNTUiIHN0cm9rZT0iIzJDNzQ3MCIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgICAgIDxwYXRoIGQ9Ik0yMCwzMCBDMjAsMzAgMCw0MCAtNSw0NSIgc3Ryb2tlPSIjMkM3NDcwIiBzdHJva2Utd2lkdGg9IjMiLz4KCiAgICAgIDxwYXRoIGQ9Ik0zNSw1MCBDMzUsNTAgNDAsNTAgNDUsNDAgQzUwLDMwIDQ1LDIwIDQwLDIwIEMzNSwyMCAzMCwzMCAzNSw1MCBaIiBmaWxsPSIjMkM3NDcwIi8+CiAgICAgIDxwYXRoIGQ9Ik01LDQwIEM1LDQwIDAsNDAgLTUsMzAgQy0xMCwyMCAtNSwxMCAwLDEwIEM1LDEwIDEwLDIwIDUsNDAgWiIgZmlsbD0iIzJDNzQ3MCIvPgogICAgPC9nPgogIDwvZz4KCiAgPCEtLSBCbHVlIEFycm93cyAtLT4KICA8ZyBzdHJva2U9IiMxNjIzRkUiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBkPSJNOTAsMjAwIEE2MCw2MCAwIDAsMSAxNTAsMTQwIEE2MCw2MCAwIDAsMSAyMTAsMjAwIiBzdHJva2U9IiMxNjIzRkUiIHN0cm9rZS13aWR0aD0iMTUiLz4KICAgIDxwYXRoIGQ9Ik0xODAsMjcwIEE2MCw2MCAwIDAsMCAyNDAsMzMwIEE2MCw2MCAwIDAsMCAzMDAsMjcwIiBzdHJva2U9IiMxNjIzRkUiIHN0cm9rZS13aWR0aD0iMTUiLz4KICA8L2c+CgogIDwhLS0gQXJyb3cgaGVhZHMgLS0+CiAgPHBhdGggZD0iTTk1LDIwMCBMMTI1LDE4MCBMOTAsMTcwIFoiIGZpbGw9IiMxNjIzRkUiLz4KICA8cGF0aCBkPSJNMzk1LDI3MCBMMzY1LDI5MCBMNDAwLDMwMCBaIiBmaWxsPSIjMTYyM0ZFIi8+Cjwvc3ZnPg==" alt="自分史イメージ">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. サービス概要 -->
+  <section class="intro" id="intro">
+    <div class="container">
+      <h2>あなたが走ってきた軌跡を、いま、紐解きましょう。</h2>
+      <p>
+        戦後の混乱を越えて、高度経済成長に沸いた昭和。<br>
+        バブルの崩壊と共に価値観が揺らいだ平成。<br>
+        そして、時代は令和へ。
+      </p>
+      <p>
+        社会と共に走り続け、時に立ち止まり、<br>
+        またひたむきに歩んできたこれまでの日々。<br>
+        その軌跡には、<br>
+        ひとりひとりの暮らしの歴史があります。
+      </p>
+      <p>
+        私たちは丁寧なインタビューを通じて<br>
+        あなたの人生を共に振り返り、その歩みを言葉として紡ぎます。<br>
+        150ページの圧巻のボリュームでしっかりと振り返り、<br>
+        お手元に残すお手伝いをします。
+      </p>
+      <p>
+        今こそ、<br>
+        <span class="highlight">あなたの人生を振り返る一冊を。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. 特徴・こだわり -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>サービスの特徴</h2>
+      <div class="feature-grid">
+        <!-- 特徴1 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-feather="package" width="48" height="48"></i>
+          </div>
+          <h3>完全ワンストップ対応</h3>
+          <p>インタビュー、原稿執筆、編集、装丁、出版まですべてお任せ。ご自身で準備する作業は一切ありません。</p>
+        </div>
+        
+        <!-- 特徴2 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-feather="mic" width="48" height="48"></i>
+          </div>
+          <h3>丁寧なインタビュー</h3>
+          <p>プロのインタビュアーが対応。お話しに自信がない方もご安心ください。</p>
+        </div>
+        
+        <!-- 特徴3 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-feather="book" width="48" height="48"></i>
+          </div>
+          <h3>文庫サイズ・150ページの自分史</h3>
+          <p>一般的な自分史（※雑誌型）を超える納得のボリューム。手元に長く置くには文庫型がベストです。</p>
+        </div>
+        
+        <!-- 特徴4 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-feather="layers" width="48" height="48"></i>
+          </div>
+          <h3>納品数や形式も自在</h3>
+          <p>標準で10冊の文庫をご納品。数量の変更や、電子版製作も対応いたします。</p>
+        </div>
+        
+        <!-- 特徴5 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-feather="camera" width="48" height="48"></i>
+          </div>
+          <h3>写真撮影付き</h3>
+          <p>ご希望に応じて、インタビュー時のポートレート撮影を実施。追加料金はかかりません。</p>
+        </div>
+        
+        <!-- 特徴6 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-feather="heart" width="48" height="48"></i>
+          </div>
+          <h3>人生を"物語る"編集方針</h3>
+          <p>単に経歴や事実の羅列をする自分史には反対です。心の動きや時代との関わりを大切に、一人ひとりの人生を"物語"にします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 制作の流れ -->
+  <section class="process" id="process">
+    <div class="container">
+      <h2>制作の流れ</h2>
+      <div class="process-steps">
+        <!-- ステップ1 -->
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>お申し込み・日程調整</h3>
+            <p>お問い合わせ後、インタビューの日程を調整します。お電話やメールなど、ご希望の方法でご連絡します。</p>
+          </div>
+        </div>
+        
+        <!-- ステップ2 -->
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>インタビュー</h3>
+            <p>対面・オンラインどちらも可能です。PCレンタルにも対応しています。（オプション）話の内容がまとまっていなくても問題ありません。</p>
+          </div>
+        </div>
+        
+        <!-- ステップ3 -->
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>原稿の執筆・構成</h3>
+            <p>インタビュー後、約1ヶ月程度を目安に構成・執筆を行います。※繁忙状況によって前後します。</p>
+          </div>
+        </div>
+        
+        <!-- ステップ4 -->
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>校正・デザイン</h3>
+            <p>文章の確認と、表紙・レイアウトの調整を行います。文章はご自身でも修正いただけます。</p>
+          </div>
+        </div>
+        
+        <!-- ステップ5 -->
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>納品</h3>
+            <p>完成した書籍を文庫本10冊としてお届けします。ご希望により冊数の変更や電子版の作成も対応可能です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 料金とサービス内容 -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2>料金とサービス内容</h2>
+      <div class="pricing-container">
+        <div class="price-box">
+          <div class="price">50万円</div>
+          <div class="price-tax">※税込価格：55万円</div>
+        </div>
+        
+        <div class="price-details">
+          <h3>含まれる内容</h3>
+          <ul>
+            <li>インタビュー（1回＋予備1回用意）</li>
+            <li>原稿執筆・構成</li>
+            <li>校正・編集・装丁</li>
+            <li>写真撮影（ポートレート）</li>
+            <li>文庫サイズ（150ページ）</li>
+            <li>印刷・製本された文庫本（10冊）</li>
+            <li>電子書籍データ（PDF）</li>
+          </ul>
+        </div>
+        
+        <div class="price-details">
+          <h3>含まれない内容</h3>
+          <ul>
+            <li>実地インタビューの場合の旅費交通費（実費負担）<br>└ 東京都内から出張します。遠方の方はぜひオンラインをご検討ください。</li>
+          </ul>
+        </div>
+        
+        <div class="price-details">
+          <h3>オプション</h3>
+          <ul>
+            <li>PCレンタルサービス</li>
+            <li>動画作成サービス（インタビュー風景／メッセージ動画）</li>
+            <li>発行書籍数の増加</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. よくあるご質問 -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>よくあるご質問</h2>
+      <div class="faq-container">
+        <!-- 質問1 -->
+        <div class="faq-item">
+          <div class="faq-question">ちゃんと進められるか心配です。</div>
+          <div class="faq-answer">
+            <p>体調や会話のペースに合わせて柔軟に対応します。</p>
+            <p>※録音・文字起こしが難しい場合はお受けできない場合があります。事前にご相談ください。</p>
+          </div>
+        </div>
+        
+        <!-- 質問2 -->
+        <div class="faq-item">
+          <div class="faq-question">インタビューはどれくらい時間がかかりますか？</div>
+          <div class="faq-answer">
+            <p>3〜5時間程度を想定しています。休憩を挟みながら進めます。</p>
+            <p>負担が大きい場合や分量が足りなかった場合に備えて、予備インタビューを設けています。</p>
+            <p>また、オンラインの場合は複数回に分割することも可能です。</p>
+          </div>
+        </div>
+        
+        <!-- 質問3 -->
+        <div class="faq-item">
+          <div class="faq-question">話がまとまっていないのですが、大丈夫ですか？</div>
+          <div class="faq-answer">
+            <p>問題ありません。インタビュアーが自然な流れを作りますので、安心してお話しいただけます。</p>
+          </div>
+        </div>
+        
+        <!-- 質問4 -->
+        <div class="faq-item">
+          <div class="faq-question">対面ではなく、オンラインでも対応できますか？</div>
+          <div class="faq-answer">
+            <p>はい、どちらでも対応可能です。PCレンタルもございます。</p>
+            <p>※オンラインの場合は、ポートレート撮影はつきません。</p>
+          </div>
+        </div>
+        
+        <!-- 質問5 -->
+        <div class="faq-item">
+          <div class="faq-question">書いた内容は確認できますか？</div>
+          <div class="faq-answer">
+            <p>はい、必ずご確認いただきます。気になる箇所はご自身で修正していただけます。</p>
+          </div>
+        </div>
+        
+        <!-- 質問6 -->
+        <div class="faq-item">
+          <div class="faq-question">完成までどれくらい時間がかかりますか？</div>
+          <div class="faq-answer">
+            <p>約2〜3ヶ月が目安です。状況により前後することがあります。</p>
+          </div>
+        </div>
+        
+        <!-- 質問7 -->
+        <div class="faq-item">
+          <div class="faq-question">自分史を贈り物として考えています。家族から申し込んでも大丈夫ですか？</div>
+          <div class="faq-answer">
+            <p>はい、長寿祝い・退職記念などで自分史をプレゼントするケースは数多くご利用いただいています。</p>
+            <p>ご要望をお聞きした上で進行させていただきます。</p>
+          </div>
+        </div>
+        
+        <!-- 質問8 -->
+        <div class="faq-item">
+          <div class="faq-question">支払いはどのように行いますか？</div>
+          <div class="faq-answer">
+            <p>銀行振込でお願いいたします。ご本人・ご家族どちらの名義でも問題ありません。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. お問い合わせ・資料請求 -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>お問い合わせ・資料請求</h2>
+      <p>
+        自分史について気になることやご相談がありましたら、<br>
+        どうぞお気軽にお問い合わせください。<br>
+        ご家族からのご相談も歓迎しております。<br>
+        お電話・メール・フォームなど、ご希望の方法でご連絡いただけます。
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn">お問い合わせフォーム</a>
+        <a href="tel:0300000000" class="btn">お電話でのお問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>サービスについて</h3>
+          <ul>
+            <li><a href="#intro">サービス概要</a></li>
+            <li><a href="#features">サービスの特徴</a></li>
+            <li><a href="#process">制作の流れ</a></li>
+            <li><a href="#pricing">料金とサービス内容</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>お役立ち情報</h3>
+          <ul>
+            <li><a href="#faq">よくあるご質問</a></li>
+            <li><a href="#">自分史制作のコツ</a></li>
+            <li><a href="#">インタビューの準備</a></li>
+            <li><a href="#">写真の選び方</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>会社情報</h3>
+          <ul>
+            <li><a href="#">会社概要</a></li>
+            <li><a href="#">スタッフ紹介</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>お問い合わせ</h3>
+          <ul>
+            <li><a href="#contact">お問い合わせフォーム</a></li>
+            <li><a href="tel:0300000000">電話: 03-0000-0000</a></li>
+            <li><a href="mailto:info@jibunshi.jp">メール: info@jibunshi.jp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 自分史制作サービス All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Feather Iconsの初期化
+    feather.replace();
+    
+    // FAQのアコーディオン機能
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // 現在の状態を切り替える
+          item.classList.toggle('active');
+          
+          // 他のアクティブなアイテムを閉じる
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+        });
+      });
+      
+      // メニュートグル機能
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
+      
+      menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+      });
+      
+      // ナビゲーションリンクのスムーススクロール
+      const navLinks = document.querySelectorAll('.main-nav a');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          window.scrollTo({
+            top: targetSection.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // スマホメニューが開いていたら閉じる
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
