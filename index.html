@@ -738,6 +738,18 @@
     .hero p {
       color: #0E244B;
     }
+
+    /* 日本語テキストが単語の途中で改行されるのを防ぐ */
+    h1, h2, h3, p, li, a, span {
+      word-break: keep-all;  /* 単語の途中での改行を防止 */
+      overflow-wrap: break-word;  /* 長い単語が要素をはみ出す場合に改行を許可 */
+    }
+    
+    /* ヒーローセクションのテキストに特に適用 */
+    .hero h1, .hero p {
+      word-break: keep-all;
+    }
+    
   </style>
   <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ6T449FJ4"></script>
