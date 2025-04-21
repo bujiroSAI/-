@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
   }
 
 .loading-logo {
@@ -1148,13 +1148,18 @@
     });
   </script>
   <script>
-  // ページの読み込みが完了したらローディング画面を非表示にする
-  window.addEventListener('load', function() {
-    // 2秒後にローディング画面をフェードアウト
-    setTimeout(function() {
-      document.getElementById('loading').classList.add('loaded');
-    }, 2000);
-  });
+    // ページの読み込みが完了したらローディング画面を非表示にする
+    window.addEventListener('load', function() {
+        // ロゴが完全に表示された後、フェードアウト開始
+        setTimeout(function() {
+        const loadingScreen = document.getElementById('loading');
+        loadingScreen.classList.add('loaded');
+        // フェードアウト完了後にローディング要素を完全に削除（オプション）
+        setTimeout(function() {
+          loadingScreen.style.display = 'none';
+        }, 1000); // フェードアウトと同じ1秒後に非表示
+      }, 2000);
+});
 </script>
 </body>
 </html>
