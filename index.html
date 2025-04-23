@@ -97,21 +97,22 @@
     
     .logo img {
       height: auto;
-      max-height: 60px;
+      max-height: 45px;
       width: auto;
     }
     
     .main-nav ul {
       display: flex;
       list-style: none;
+      align-items: center;
     }
     
     .main-nav ul li {
-      margin-left: 30px;
+      margin-left: 20px;
     }
     
     .main-nav ul li a {
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 500;
       color: #0E244B; 
       text-decoration: none;
@@ -121,6 +122,24 @@
     .main-nav ul li a:hover {
       color: #0E244B;
       opacity: 0.7;
+    }
+    
+    /* 問い合わせボタンスタイル */
+    .contact-btn {
+      display: inline-block;
+      background-color: #0E244B;
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    
+    .contact-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
     }
     
     .menu-toggle {
@@ -577,6 +596,12 @@
         text-align: center;
       }
       
+      .contact-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 16px;
+      }
+      
       .menu-toggle {
         display: block;
       }
@@ -832,16 +857,17 @@
     <div class="container">
       <div class="header-inner">
         <div class="logo">
-        <a href="/"><img src="header_logo.png" alt="伝々文庫"></a>
-      </div>
+          <a href="/"><img src="header_logo.png" alt="伝々文庫"></a>
+        </div>
         <nav class="main-nav">
           <ul>
-            <li><a href="#intro">サービス概要</a></li>
-            <li><a href="#features">サービスの特徴</a></li>
-            <li><a href="#process">制作の流れ</a></li>
-            <li><a href="#pricing">料金</a></li>
-            <li><a href="#faq">よくある質問</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="index.html#intro">サービス概要</a></li>
+            <li><a href="index.html#features">サービスの特徴</a></li>
+            <li><a href="index.html#process">制作の流れ</a></li>
+            <li><a href="index.html#pricing">料金</a></li>
+            <li><a href="index.html#faq">よくある質問</a></li>
+            <li><a href="editor.html">編集長より</a></li>
+            <li><a href="index.html#contact" class="contact-btn">お問い合わせ</a></li>
           </ul>
         </nav>
         <div class="menu-toggle">

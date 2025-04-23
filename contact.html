@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お問い合わせ - 伝々文庫</title>
+  <title>お問い合わせ | 伝々文庫</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
     
      .logo img {
       height: auto;
-      max-height: 60px;
+      max-height: 45px;
       width: auto;
     }
     
@@ -60,11 +60,11 @@
     }
     
     .main-nav ul li {
-      margin-left: 30px;
+      margin-left: 20px;
     }
     
     .main-nav ul li a {
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 500;
       color: #0E244B;
       text-decoration: none;
@@ -274,6 +274,32 @@
         object-fit: contain;
       }    
     }
+    
+    /* 問い合わせボタンスタイル */
+    .contact-btn {
+      display: inline-block;
+      background-color: #0E244B;
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    
+    .contact-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .contact-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 16px;
+      }
+    }
   </style>
   <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ6T449FJ4"></script>
@@ -300,7 +326,7 @@
             <li><a href="index.html#pricing">料金</a></li>
             <li><a href="index.html#faq">よくある質問</a></li>
             <li><a href="editor.html">編集長より</a></li>
-            <li><a href="index.html#contact">お問い合わせ</a></li>
+            <li><a href="index.html#contact" class="contact-btn">お問い合わせ</a></li>
           </ul>
         </nav>
         <div class="menu-toggle">
