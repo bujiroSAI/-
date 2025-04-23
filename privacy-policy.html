@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - 伝々文庫</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  <style>
+    /* ベーススタイル */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #081219;
+      background-color: #F8F8F8;
+    }
+    
+    /* ヘッダースタイル */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #F8F8F8;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      flex-shrink: 0;
+    }
+    
+    .logo img {
+      height: auto;
+      max-height: 60px;
+      width: auto;
+    }
+    
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    .main-nav ul li {
+      margin-left: 30px;
+    }
+    
+    .main-nav ul li a {
+      font-size: 17px;
+      font-weight: 500;
+      color: #0E244B;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .main-nav ul li a:hover {
+      color: #0E244B;
+      opacity: 0.7;
+    }
+    
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      color: #081219;
+    }
+    
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #0E244B; 
+      color: white;
+      padding: 18px 35px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      margin: 10px;
+      min-width: 220px;
+      transition: all 0.3s;
+    }
+    
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    
+    /* プライバシーポリシースタイル */
+    .policy-section {
+      padding-top: 150px;
+      padding-bottom: 100px;
+    }
+    
+    .policy-container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 50px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .policy-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #0E244B;
+    }
+    
+    .policy-content {
+      margin-bottom: 40px;
+    }
+    
+    .policy-content p {
+      margin-bottom: 20px;
+    }
+    
+    .policy-content h3 {
+      font-size: 22px;
+      margin: 40px 0 15px;
+      color: #0E244B;
+      border-bottom: 1px solid #E0E0E0;
+      padding-bottom: 10px;
+    }
+    
+    .policy-content ul {
+      margin-left: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .policy-content li {
+      margin-bottom: 10px;
+    }
+    
+    .policy-date {
+      text-align: right;
+      margin-top: 50px;
+      font-size: 16px;
+      color: #666;
+    }
+    
+    /* フッタースタイル */
+    footer {
+      background-color: #0E244B;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 30px;
+      padding: 0 15px;
+      text-align: left;
+    }
+    
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column ul li a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-column ul li a:hover {
+      color: white;
+    }
+    
+    .footer-logo {
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    .footer-logo img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 30px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* レスポンシブデザイン */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+      
+      .container {
+        padding: 0 25px;
+      }
+      
+      .header {
+        padding: 15px 0;
+      }
+      
+      .header-inner {
+        flex-wrap: wrap;
+      }
+      
+      .main-nav {
+        display: none;
+        width: 100%;
+        margin-top: 20px;
+      }
+      
+      .main-nav.active {
+        display: block;
+      }
+      
+      .main-nav ul {
+        flex-direction: column;
+      }
+      
+      .main-nav ul li {
+        margin: 15px 0;
+        text-align: center;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .policy-container {
+        padding: 30px 20px;
+      }
+      
+      .policy-title {
+        font-size: 28px;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+      }
+      
+      .footer-column {
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ6T449FJ4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LZ6T449FJ4');
+  </script>
+</head>
+<body>
+  <!-- ヘッダーメニュー -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <a href="/"><img src="header_logo.png" alt="伝々文庫"></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html#intro">サービス概要</a></li>
+            <li><a href="index.html#features">サービスの特徴</a></li>
+            <li><a href="index.html#process">制作の流れ</a></li>
+            <li><a href="index.html#pricing">料金</a></li>
+            <li><a href="index.html#faq">よくある質問</a></li>
+            <li><a href="editor.html">編集長より</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle">
+          <i data-feather="menu"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- プライバシーポリシー -->
+  <section class="policy-section">
+    <div class="container">
+      <div class="policy-container">
+        <h1 class="policy-title">プライバシーポリシー</h1>
+        
+        <div class="policy-content">
+          <p>伝々文庫（以下、「当社」）は、お客様の個人情報保護の重要性について認識し、個人情報の保護に関する法律（個人情報保護法）およびその他の関係法令を遵守します。本プライバシーポリシーでは、当社がどのような個人情報を取得し、どのように利用・管理するかについて説明します。</p>
+          
+          <h3>1. 個人情報の取得について</h3>
+          <p>当社は、以下の方法でお客様の個人情報を取得します。</p>
+          <ul>
+            <li>お問い合わせフォームからの情報提供</li>
+            <li>電話やメールでのお問い合わせ</li>
+            <li>インタビューでの情報提供</li>
+            <li>サービス申込時の情報提供</li>
+          </ul>
+          
+          <h3>2. 取得する個人情報の内容</h3>
+          <p>当社が取得する個人情報は以下の通りです。</p>
+          <ul>
+            <li>氏名</li>
+            <li>住所</li>
+            <li>電話番号</li>
+            <li>メールアドレス</li>
+            <li>インタビュー内容（自分史制作に関わる個人的経験や情報）</li>
+            <li>お支払い情報</li>
+          </ul>
+          
+          <h3>3. 個人情報の利用目的</h3>
+          <p>当社は、取得した個人情報を以下の目的で利用します。</p>
+          <ul>
+            <li>サービス（自分史制作）の提供</li>
+            <li>お問い合わせへの対応</li>
+            <li>サービスに関する重要なお知らせ</li>
+            <li>サービス内容改善のための分析（個人を特定しない形での統計データとして）</li>
+            <li>お支払い手続き</li>
+          </ul>
+          
+          <h3>4. 個人情報の第三者提供</h3>
+          <p>当社は、法令に基づく場合を除いて、お客様の同意なく個人情報を第三者に提供することはありません。ただし、以下の場合は個人情報を提供することがあります。</p>
+          <ul>
+            <li>法令に基づく場合</li>
+            <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+            <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+            <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+          </ul>
+          
+          <h3>5. 業務委託先への個人情報の提供</h3>
+          <p>当社は、サービス提供に必要な範囲内で、個人情報の取り扱いを外部に委託することがあります。この場合、当社は委託先に対して個人情報の適切な管理を求め、委託先の監督を行います。</p>
+          <p>例：印刷・製本業務、配送業務など</p>
+          
+          <h3>6. インタビュー内容の取り扱い</h3>
+          <p>当社は、自分史制作のためにお伺いした個人的なエピソードや情報について、特に厳格に管理し、本人の同意なく公開することはありません。自分史は、契約に基づいてお客様にのみお渡しします。</p>
+          
+          <h3>7. 個人情報の安全管理措置</h3>
+          <p>当社は、個人情報の漏洩、滅失またはき損の防止その他の個人情報の安全管理のために必要かつ適切な措置を講じます。</p>
+          
+          <h3>8. 個人情報の開示・訂正・利用停止等</h3>
+          <p>当社は、お客様から個人情報の開示、訂正、利用停止、消去等の請求があった場合、本人確認を行った上で、法令に従って対応します。個人情報に関するお問い合わせは、下記の連絡先までご連絡ください。</p>
+          
+          <h3>9. Cookie（クッキー）の使用について</h3>
+          <p>当社ウェブサイトでは、ユーザー体験向上のためにCookieを使用しています。Cookieとは、ウェブサイトがお客様のコンピュータに保存する小さなテキストファイルで、お客様のブラウザを識別するために使用されます。お客様はブラウザの設定によりCookieの受け入れを拒否することができますが、その場合一部のサービスが正常に機能しない可能性があります。</p>
+          
+          <h3>10. プライバシーポリシーの変更</h3>
+          <p>当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更した場合は、当ウェブサイト上でお知らせします。</p>
+          
+          <h3>11. お問い合わせ先</h3>
+          <p>個人情報の取り扱いに関するお問い合わせは、下記までご連絡ください。</p>
+          <p>
+            伝々文庫<br>
+            住所：東京都●●区●●1-2-3<br>
+            電話：080-1158-3239<br>
+            メール：info@dendenbunko.jp（仮）
+          </p>
+          
+          <div class="policy-date">
+            <p>2025年1月1日 制定</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>サービスについて</h3>
+          <ul>
+            <li><a href="index.html#intro">サービス概要</a></li>
+            <li><a href="index.html#features">サービスの特徴</a></li>
+            <li><a href="index.html#process">制作の流れ</a></li>
+            <li><a href="index.html#pricing">料金</a></li>
+            <li><a href="index.html#faq">よくあるご質問</a></li>
+            <li><a href="editor.html">編集長より</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>お問い合わせ</h3>
+          <ul>
+            <li><a href="contact.html">お問い合わせフォーム</a></li>
+            <li><a href="tel:08011583239">電話: 080-1158-3239</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>運営情報</h3>
+          <ul>
+            <li><a href="company.html">運営会社情報</a></li>
+            <li><a href="privacy-policy.html">プライバシーポリシー</a></li>
+            <li><a href="legal.html">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- ロゴマークスペース -->
+      <div class="footer-logo">
+        <img src="footer-logo.png" alt="伝々文庫">
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 伝々文庫 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Feather Iconsの初期化
+    feather.replace();
+    
+    // メニュートグル機能
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
+      
+      menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html> 
