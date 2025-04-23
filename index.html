@@ -743,7 +743,72 @@
       color: #0E244B;
     }
 
+    /* 編集長ボタンスタイル */
+    .editor-button-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px auto;
+    }
     
+    .editor-btn {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #0E244B;
+      padding: 15px 30px;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      width: 550px;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .editor-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      opacity: 0.95;
+    }
+    
+    .editor-img-container {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+      background-color: white;
+      padding: 10px;
+      flex-shrink: 0;
+    }
+    
+    .editor-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    
+    .editor-btn-text {
+      font-size: 30px;
+      font-weight: 700;
+    }
+    
+    @media (max-width: 768px) {
+      .editor-btn {
+        width: 280px;
+        padding: 12px 20px;
+      }
+      
+      .editor-img-container {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+      }
+      
+      .editor-btn-text {
+        font-size: 16px;
+      }
+    }
   </style>
   <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ6T449FJ4"></script>
@@ -775,7 +840,6 @@
             <li><a href="#process">制作の流れ</a></li>
             <li><a href="#pricing">料金</a></li>
             <li><a href="#faq">よくある質問</a></li>
-            <li><a href="editor.html">編集長より</a></li>
             <li><a href="#contact">お問い合わせ</a></li>
           </ul>
         </nav>
@@ -992,11 +1056,15 @@
   <!-- 編集長より -->
   <section class="editor-message" id="editor-message">
     <div class="container">
-      <h2>編集長より</h2>
+      <h2>Editor's Letter</h2>
       <div class="editor-content">
-        <p>「聞いておけばよかった」という後悔をなくすために。<br>あなたの人生の物語を共に紡ぎ、次世代に残すお手伝いをします。</p>
         <div class="editor-button-container">
-          <a href="editor.html" class="btn">メッセージを読む</a>
+          <a href="editor.html" class="editor-btn">
+            <div class="editor-img-container">
+              <img src="footer-logo.png" alt="編集長" class="editor-img">
+            </div>
+            <span class="editor-btn-text">編集長より</span>
+          </a>
         </div>
       </div>
     </div>
@@ -1108,7 +1176,6 @@
           <li><a href="#process">制作の流れ</a></li>
           <li><a href="#pricing">料金</a></li>
           <li><a href="#faq">よくあるご質問</a></li>
-          <li><a href="editor.html">編集長より</a></li>
         </ul>
       </div>
       <div class="footer-column">
