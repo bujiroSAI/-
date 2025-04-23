@@ -375,6 +375,7 @@
             <li><a href="index.html#features">サービスの特徴</a></li>
             <li><a href="index.html#process">制作の流れ</a></li>
             <li><a href="index.html#pricing">料金</a></li>
+            <li><a href="index.html#editor-message">編集長より</a></li>
             <li><a href="index.html#faq">よくある質問</a></li>
             <li><a href="index.html#contact" class="contact-btn">お問い合わせ</a></li>
           </ul>
@@ -436,6 +437,7 @@
             <li><a href="index.html#features">サービスの特徴</a></li>
             <li><a href="index.html#process">制作の流れ</a></li>
             <li><a href="index.html#pricing">料金</a></li>
+            <li><a href="index.html#editor-message">編集長より</a></li>
             <li><a href="index.html#faq">よくあるご質問</a></li>
           </ul>
         </div>
@@ -478,6 +480,24 @@
       
       menuToggle.addEventListener('click', () => {
         mainNav.classList.toggle('active');
+      });
+      
+      // ナビゲーションリンクのスムーススクロール
+      const navLinks = document.querySelectorAll('.main-nav a');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // 外部リンク（他のページへのリンク）の場合はスムーススクロールを適用しない
+          const href = this.getAttribute('href');
+          if (!href.includes('#')) {
+            return; // 通常のリンク遷移を許可
+          }
+          
+          // スマホメニューが開いていたら閉じる
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+          }
+        });
       });
     });
   </script>

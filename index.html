@@ -596,6 +596,39 @@
         text-align: center;
       }
       
+      .mobile-nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #F8F8F8;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+      
+      .mobile-nav.active {
+        display: block;
+      }
+      
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .mobile-nav ul li {
+        margin: 15px 0;
+        text-align: center;
+      }
+      
+      .mobile-nav ul li a {
+        color: #0E244B;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
       .contact-btn {
         display: inline-block;
         margin-top: 10px;
@@ -861,13 +894,13 @@
         </div>
         <nav class="main-nav">
           <ul>
-            <li><a href="index.html#intro">サービス概要</a></li>
-            <li><a href="index.html#features">サービスの特徴</a></li>
-            <li><a href="index.html#process">制作の流れ</a></li>
-            <li><a href="index.html#pricing">料金</a></li>
-            <li><a href="index.html#faq">よくある質問</a></li>
-            <li><a href="editor.html">編集長より</a></li>
-            <li><a href="index.html#contact" class="contact-btn">お問い合わせ</a></li>
+            <li><a href="#intro">サービス概要</a></li>
+            <li><a href="#features">サービスの特徴</a></li>
+            <li><a href="#process">制作の流れ</a></li>
+            <li><a href="#pricing">料金</a></li>
+            <li><a href="#editor-message">編集長より</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#contact" class="contact-btn">お問い合わせ</a></li>
           </ul>
         </nav>
         <div class="menu-toggle">
@@ -1202,6 +1235,7 @@
           <li><a href="#features">サービスの特徴</a></li>
           <li><a href="#process">制作の流れ</a></li>
           <li><a href="#pricing">料金</a></li>
+          <li><a href="#editor-message">編集長より</a></li>
           <li><a href="#faq">よくあるご質問</a></li>
         </ul>
       </div>
@@ -1270,15 +1304,22 @@
       
       navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-          e.preventDefault();
+          const href = this.getAttribute('href');
           
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          
-          window.scrollTo({
-            top: targetSection.offsetTop - 80,
-            behavior: 'smooth'
-          });
+          // 現在のページ内リンクの場合のみスムーススクロールを適用
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            
+            const targetId = href;
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+              window.scrollTo({
+                top: targetSection.offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }
+          }
           
           // スマホメニューが開いていたら閉じる
           if (mainNav.classList.contains('active')) {
