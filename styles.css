@@ -1,9 +1,20 @@
 /* ローディング画面以外のすべての要素を最初は透明に */
+body {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #081219;
+  background-color: #F8F8F8;
+  opacity: 1; /* ボディ自体は表示 */
+}
+
 body > header,
 body > section,
-body > footer {
+body > footer,
+body > main {
   opacity: 0;
-  transition: opacity 1s ease; /* フェードインの時間とイージング */
+  visibility: hidden; /* 完全に非表示にして一瞬表示されるのを防止 */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* 遷移時間を調整 */
 }
 
 /* ローディング画面のスタイル */
@@ -18,14 +29,17 @@ body > footer {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 1s ease; /* フェードアウトの時間を1秒に設定 */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* 遷移時間を調整 */
 }
 
 .loading-logo {
   width: 240px;
   height: 240px;
   opacity: 0;
-  animation: fadeIn 2s ease forwards; /* フェードインは2秒のまま */
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards; /* アニメーション時間を短縮 */
 }
 
 .loading-logo img {
@@ -36,27 +50,18 @@ body > footer {
 
 @keyframes fadeIn {
   0% { opacity: 0; }
-  50% { opacity: 0.6; }
   100% { opacity: 1; }
 }
 
 .loaded {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 /* ベースのスタイル */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #081219;
-  background-color: #F8F8F8;
 }
 
 /* ヘッダーのスタイル */

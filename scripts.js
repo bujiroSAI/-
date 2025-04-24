@@ -1,15 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // ローディング画面（トップページのみ）
+  // ローディング画面の初期化（トップページのみ）
   const loader = document.getElementById('loading');
-  if (loader) {
-    window.addEventListener('load', function() {
-      loader.style.opacity = '0';
-      setTimeout(function() {
-        loader.style.display = 'none';
-      }, 500);
-    });
-  }
-
+  
   // モバイルメニュートグル
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
@@ -75,28 +67,43 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// ローディング画面の設定
+// ローディング画面の設定 - 完全に読み込み完了時に実行
 window.addEventListener('load', function() {
-  // ページコンテンツを最初は非表示に
+  // ローディング処理を実行
+  handleLoading();
+});
+
+// ローディング処理をまとめた関数
+function handleLoading() {
+  const loadingScreen = document.getElementById('loading');
+  if (!loadingScreen) return;
+  
+  // ページロード時に全コンテンツを非表示に
   const mainContent = document.querySelectorAll('body > *:not(#loading)');
   mainContent.forEach(function(element) {
     element.style.opacity = '0';
-    element.style.transition = 'opacity 1s ease';
+    element.style.transition = 'opacity 0.5s ease';
+    element.style.visibility = 'hidden';
   });
   
-  // ロゴが表示された後、フェードアウト開始と同時にコンテンツをフェードイン
+  // ローディングロゴを表示状態に
+  loadingScreen.style.opacity = '1';
+  loadingScreen.style.visibility = 'visible';
+  
+  // 正確に2秒後にローディング画面をフェードアウト
   setTimeout(function() {
-    const loadingScreen = document.getElementById('loading');
+    // ローディング画面をフェードアウト
     loadingScreen.classList.add('loaded');
     
-    // コンテンツをフェードイン
+    // メインコンテンツをフェードイン
     mainContent.forEach(function(element) {
+      element.style.visibility = 'visible';
       element.style.opacity = '1';
     });
     
-    // フェードアウト完了後にローディング要素を完全に削除
+    // ローディング完了後に要素を削除
     setTimeout(function() {
       loadingScreen.style.display = 'none';
-    }, 1000);
-  }, 2000);
-}); 
+    }, 500);
+  }, 1500); // 合計で2秒になるよう調整（1.5秒待機 + 0.5秒フェード = 2秒）
+} 
