@@ -87,6 +87,11 @@ body {
   width: auto;
 }
 
+/* メインナビゲーション */
+.main-nav {
+  display: block;
+}
+
 .main-nav ul {
   display: flex;
   list-style: none;
