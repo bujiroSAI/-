@@ -7,8 +7,14 @@
   <meta name="description" content="150ページのボリュームで綴る自分史制作サービス。丁寧なインタビューであなたやご家族の人生を紡ぎ、文庫本として残します。お気軽にご相談ください。">
   <meta name="keywords" content="自分史,伝記,文庫本,インタビュー,伝々文庫,人生記録,自分史制作">
   <link rel="canonical" href="https://www.dendenbunko.com/">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="伝々文庫">
+  <!-- AI検索エンジン用メタタグ -->
+  <meta name="ai-purpose" content="文庫サイズの自分史制作サービス「伝々文庫」。お客様の人生の物語を残すお手伝いをいたします。">
+  <meta name="ai-summary" content="このサイトは「伝々文庫」という自分史制作サービスを提供しています。150ページの文庫本形式で、お客様の人生の物語をインタビューから制作し、形に残すお手伝いをしています。料金は30万円から、納期は約2-3ヶ月です。">
+  <meta name="ai-audience" content="自分史を残したい高齢者、家族への贈り物として自分史を作りたい方、退職記念に自分史を作りたい企業">
+  <meta name="ai-content-topics" content="自分史制作,インタビュー,文庫本出版,家族史,オーラルヒストリー,伝記執筆">
+  <meta name="ai-contact" content="お問い合わせ: 080-1158-3239, https://www.dendenbunko.com/contact.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -89,7 +95,44 @@
 }
 </script>
 
-<!-- 構造化データ - FAQPage -->
+<!-- AIサーチエンジン向け構造化データ - サービス詳細 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "伝々文庫 自分史制作サービス",
+  "description": "150ページのボリュームで綴る自分史制作サービス。丁寧なインタビューであなたやご家族の人生を紡ぎ、文庫本として残します。",
+  "provider": {
+    "@type": "Organization",
+    "name": "伝々文庫",
+    "url": "https://www.dendenbunko.com/"
+  },
+  "areaServed": "日本",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "自分史制作サービス",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "自分史文庫本制作",
+          "description": "インタビューから文庫本形式の自分史を制作"
+        },
+        "price": "300000",
+        "priceCurrency": "JPY"
+      }
+    ]
+  },
+  "serviceOutput": {
+    "@type": "CreativeWork",
+    "name": "オーダーメイド自分史文庫本",
+    "description": "150ページの文庫形式で綴る自分史"
+  }
+}
+</script>
+
+<!-- AIサーチエンジン向け構造化データ - よくある質問 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -205,7 +248,7 @@
 
   <main>
     <!-- 1. ヒーローセクション -->
-    <section class="hero">
+    <section class="hero" data-ai-section="hero" data-ai-purpose="サービス紹介メインビジュアル">
       <div class="container hero-container">
         <div class="hero-content">
           <h1>あなたの人生が、<br>150ページの本になる。</h1>
@@ -222,7 +265,7 @@
     </section>
 
     <!-- ニュースセクション -->
-    <section class="news-compact" id="news">
+    <section class="news-compact" id="news" data-ai-section="news" data-ai-purpose="最新のお知らせ情報">
       <div class="container">
         <h2>お知らせ</h2>
         <div class="news-compact-container">
@@ -248,7 +291,7 @@
     </section>
 
     <!-- 2. サービス概要 -->
-    <section class="intro" id="intro">
+    <section class="intro" id="intro" data-ai-section="service-intro" data-ai-purpose="サービスの概要説明">
       <div class="container">
         <h2>あなたが走った軌跡を、いま、紐解きましょう。</h2>
         <p>
@@ -276,7 +319,7 @@
     </section>
 
     <!-- 3. 特徴・こだわり -->
-    <section class="features" id="features">
+    <section class="features" id="features" data-ai-section="features" data-ai-purpose="サービスの特徴説明">
       <div class="container">
         <h2>サービスの特徴</h2>
         <div class="feature-grid">
@@ -338,7 +381,7 @@
     </section>
 
     <!-- 4. 制作の流れ -->
-    <section class="process" id="process">
+    <section class="process" id="process" data-ai-section="process" data-ai-purpose="サービスの制作プロセス">
       <div class="container">
         <h2>制作の流れ</h2>
         <div class="process-steps">
@@ -391,7 +434,7 @@
     </section>
 
     <!-- 5. 料金とサービス内容 -->
-    <section class="pricing" id="pricing">
+    <section class="pricing" id="pricing" data-ai-section="pricing" data-ai-purpose="料金・サービス内容詳細">
       <div class="container">
         <h2>料金とサービス内容</h2>
         <div class="pricing-container">
@@ -439,7 +482,7 @@
     </section>
 
     <!-- 編集長より -->
-    <section class="editor-message" id="editor-message">
+    <section class="editor-message" id="editor-message" data-ai-section="editor-message" data-ai-purpose="編集長からのメッセージ">
       <div class="container">
         <h2>Editor's Letter</h2>
         <div class="editor-content">
@@ -456,7 +499,7 @@
     </section>
 
     <!-- 6. よくあるご質問 -->
-    <section class="faq" id="faq">
+    <section class="faq" id="faq" data-ai-section="faq" data-ai-purpose="よくある質問と回答">
       <div class="container">
         <h2>よくあるご質問</h2>
         <div class="faq-container">
@@ -533,6 +576,7 @@
     </section>
 
     <!-- 7. お問い合わせ・資料請求 -->
+    <section class="cta" id="contact" data-ai-section="contact" data-ai-purpose="お問い合わせ情報">
     <section class="cta" id="contact">
       <div class="container">
         <h2>お問い合わせ・資料請求</h2>
