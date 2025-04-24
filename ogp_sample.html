@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGPサンプルページ</title>
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="サイトのタイトル" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.com/" />
+    <meta property="og:image" content="https://www.example.com/images/ogp.jpg" />
+    <meta property="og:description" content="ここにサイトの説明文を入力します。SNSでシェアされた際に表示されます。" />
+    <meta property="og:site_name" content="サイト名" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@サイトのTwitterアカウント" />
+    
+    <!-- LINEでのシェア用設定 -->
+    <meta property="og:locale" content="ja_JP" />
+    
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OGP設定サンプル</h1>
+        <p>このページには、OGP（Open Graph Protocol）の設定が含まれています。</p>
+        <p>SNSでこのページをシェアすると、設定したタイトル、説明文、画像が表示されます。</p>
+        
+        <h2>実装方法</h2>
+        <p>HTMLのhead要素内に以下のようなmeta要素を追加します：</p>
+        <pre>
+&lt;meta property="og:title" content="サイトのタイトル" /&gt;
+&lt;meta property="og:type" content="website" /&gt;
+&lt;meta property="og:url" content="https://www.example.com/" /&gt;
+&lt;meta property="og:image" content="https://www.example.com/images/ogp.jpg" /&gt;
+&lt;meta property="og:description" content="ここにサイトの説明文を入力します。" /&gt;
+&lt;meta property="og:site_name" content="サイト名" /&gt;
+        </pre>
+        
+        <h2>主なOGPタグの説明</h2>
+        <ul>
+            <li><strong>og:title</strong> - シェア時に表示されるタイトル</li>
+            <li><strong>og:type</strong> - コンテンツの種類（website, article, blogなど）</li>
+            <li><strong>og:url</strong> - シェアされるページの正規URL</li>
+            <li><strong>og:image</strong> - シェア時に表示される画像のURL</li>
+            <li><strong>og:description</strong> - シェア時に表示される説明文</li>
+            <li><strong>og:site_name</strong> - Webサイト全体の名前</li>
+        </ul>
+        
+        <h2>Twitter Cards</h2>
+        <p>Twitterでのシェア表示を最適化するために、Twitter Cards用のmetaタグも追加しています：</p>
+        <pre>
+&lt;meta name="twitter:card" content="summary_large_image" /&gt;
+&lt;meta name="twitter:site" content="@サイトのTwitterアカウント" /&gt;
+        </pre>
+    </div>
+</body>
+</html> 

@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>伝々文庫 | 150ページの文庫本で綴る自分史制作サービス</title>
   <meta name="description" content="150ページのボリュームで綴る自分史制作サービス。丁寧なインタビューであなたやご家族の人生を紡ぎ、文庫本として残します。お気軽にご相談ください。">
+  <meta name="keywords" content="自分史,伝記,文庫本,インタビュー,伝々文庫,人生記録,自分史制作">
+  <link rel="canonical" href="https://www.dendenbunko.com/">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="伝々文庫">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" defer></script>
 
   <!-- OGP設定 -->
   <meta property="og:title" content="伝々文庫 - 150ページのボリュームで綴る自分史" />
@@ -23,6 +27,9 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@dendenbunko" />
+  <meta name="twitter:title" content="伝々文庫 - 150ページのボリュームで綴る自分史">
+  <meta name="twitter:description" content="丁寧なインタビューであなたの人生を紡ぐ自分史制作サービス。あなたやご家族の歩みを150ページの文庫本に残します。">
+  <meta name="twitter:image" content="https://www.dendenbunko.com/ogr.jpg">
 
   <!-- LINEでのシェア用設定 -->
   <meta property="og:locale" content="ja_JP" />
@@ -48,6 +55,37 @@
     "priceCurrency": "JPY",
     "availability": "https://schema.org/InStock"
   }
+}
+</script>
+
+<!-- 構造化データ - Website -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "伝々文庫",
+  "url": "https://www.dendenbunko.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.dendenbunko.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 構造化データ - BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://www.dendenbunko.com/"
+    }
+  ]
 }
 </script>
 
@@ -145,7 +183,7 @@
     <div class="container">
       <div class="header-inner">
         <div class="logo">
-          <a href="/"><img src="header_logo.png" alt="伝々文庫" width="180" height="45"></a>
+          <a href="/"><img src="header_logo.png" alt="伝々文庫ロゴ - 自分史制作サービス" width="180" height="45"></a>
         </div>
         <nav class="main-nav">
           <ul>
@@ -178,7 +216,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="hero-image.jpg" alt="自分史イメージ" width="600" height="400" loading="lazy">
+          <img src="hero-image.jpg" alt="自分史イメージ - 伝々文庫の制作例" width="600" height="400" loading="lazy" fetchpriority="high">
         </div>
       </div>
     </section>

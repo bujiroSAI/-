@@ -1,6 +1,30 @@
-// Feather Iconsの初期化
 document.addEventListener('DOMContentLoaded', function() {
-  feather.replace();
+  // ローディング画面（トップページのみ）
+  const loader = document.getElementById('loading');
+  if (loader) {
+    window.addEventListener('load', function() {
+      loader.style.opacity = '0';
+      setTimeout(function() {
+        loader.style.display = 'none';
+      }, 500);
+    });
+  }
+
+  // モバイルメニュートグル
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  }
+
+  // feather icons初期化
+  if (typeof feather !== 'undefined') {
+    feather.replace();
+  }
   
   // FAQのアコーディオン機能
   const faqItems = document.querySelectorAll('.faq-item');
@@ -19,14 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
-  });
-  
-  // メニュートグル機能
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
-  
-  menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
   });
   
   // ナビゲーションリンクのスムーススクロール
