@@ -867,6 +867,19 @@
       .campaign-text {
         font-size: 16px;
       }
+      
+      .news-title {
+        font-size: 18px;
+      }
+      
+      .news-meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .news-date {
+        margin-bottom: 5px;
+      }
     }
         /* ヒーローセクションの見出しを紺色に */
     .hero h1 {
@@ -945,6 +958,81 @@
         font-size: 16px;
       }
     }
+
+    /* コンパクトニュースセクションのスタイル */
+    .news-compact {
+      background-color: white;
+      padding: 80px 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    
+    .news-compact-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .news-compact-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .news-compact-item {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    
+    .news-compact-item:last-child {
+      border-bottom: none;
+    }
+    
+    .news-compact-date {
+      font-size: 14px;
+      color: #777;
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    
+    .news-compact-category {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      background-color: #0E244B;
+      padding: 3px 10px;
+      border-radius: 30px;
+      margin: 0 15px;
+      min-width: 80px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
+    .news-compact-title {
+      font-weight: 500;
+      flex-grow: 1;
+    }
+    
+    /* レスポンシブデザイン */
+    @media (max-width: 768px) {
+      .news-compact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+      }
+      
+      .news-compact-date {
+        margin-bottom: 5px;
+      }
+      
+      .news-compact-category {
+        margin: 5px 0;
+      }
+      
+      .news-compact-title {
+        margin-top: 5px;
+      }
+    }
   </style>
   <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ6T449FJ4"></script>
@@ -1001,6 +1089,42 @@
 <div class="hero-image">
   <img src="hero-image.jpg" alt="自分史イメージ">
 </div>
+    </div>
+  </section>
+
+  <!-- ニュースセクション -->
+  <section class="news-compact" id="news">
+    <div class="container">
+      <h2>お知らせ</h2>
+      <div class="news-compact-container">
+        <ul class="news-compact-list">
+          <li class="news-compact-item">
+            <span class="news-compact-date">2025.05.01</span>
+            <span class="news-compact-category">キャンペーン</span>
+            <span class="news-compact-title">創業記念キャンペーン期間延長のお知らせ</span>
+          </li>
+          <li class="news-compact-item">
+            <span class="news-compact-date">2025.04.20</span>
+            <span class="news-compact-category">メディア</span>
+            <span class="news-compact-title">NHK「朝の情報番組」で伝々文庫が紹介されました</span>
+          </li>
+          <li class="news-compact-item">
+            <span class="news-compact-date">2025.04.15</span>
+            <span class="news-compact-category">イベント</span>
+            <span class="news-compact-title">東京・銀座で「自分史の書き方」無料セミナーを開催します</span>
+          </li>
+          <li class="news-compact-item">
+            <span class="news-compact-date">2025.03.30</span>
+            <span class="news-compact-category">サービス</span>
+            <span class="news-compact-title">電子書籍版自分史の標準提供を開始しました</span>
+          </li>
+          <li class="news-compact-item">
+            <span class="news-compact-date">2025.03.20</span>
+            <span class="news-compact-category">サービス</span>
+            <span class="news-compact-title">オンラインインタビュー対応地域を全国に拡大</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -1306,7 +1430,7 @@
     </div>
   </section>
 
- <!-- フッター -->
+  <!-- フッター -->
 <footer>
   <div class="container">
     <div class="footer-content">
