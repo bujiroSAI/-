@@ -1,0 +1,21 @@
+{
+  "name": "伝々文庫",
+  "short_name": "伝々文庫",
+  "description": "昭和を生きた人生を150ページの文庫本に残す自分史サービス",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "loading-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0E244B",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+} 
